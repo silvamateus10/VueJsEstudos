@@ -1,0 +1,31 @@
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+<div id="app">
+   <h1 v-if="auth">Bem-vindo {{usuario}}</h1>
+   <p v-else>Você está logado como visitante</p>
+   <!---v-on = @--->
+   <button @click="auth = !auth">
+    {{ auth ? 'Deslogar' : 'Entrar' }}
+    </button>
+
+    <!---v-bind = : --->
+    <a :href="www.google.com">Google</a>
+    <input :value="valor" />
+
+</div>
+
+
+
+<script>
+    new Vue({
+        el: '#app',
+        data(){
+            return{
+                usuario: 'Sujeito programador',
+                auth: false,
+            }
+        }
+    });
+</script>
+
+ 

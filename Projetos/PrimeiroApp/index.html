@@ -1,0 +1,26 @@
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+<div id="app">
+    <h1>Primeiro App</h1>    
+    <p>Bem-vindo {{nome}} - {{idade}}</p>
+    <p>{{bemVindo()}}</p>
+</div>
+
+
+
+<script>
+    new Vue({
+        el: '#app',
+        data(){
+            return{
+                nome: 'Sujeito programador',
+                idade: 25
+            }
+        },
+        methods:{
+            bemVindo(){
+                return 'Bem-vindo ' + this.nome + ' - ' + this.idade;
+            }
+        }
+    });
+</script>

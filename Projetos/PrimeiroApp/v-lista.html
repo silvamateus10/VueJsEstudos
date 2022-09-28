@@ -1,0 +1,33 @@
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+<div id="app">
+    <ul>
+        <li v-for="tech in tecnologias">{{tech}}</li>
+       
+    </ul>
+    <br/>
+    <ul>
+        <li v-for="(tech, index) in tecnologias">{{tech}} - {{index}}</li>
+       
+    </ul>
+    <ul>
+        <li v-for="(tech) in tecnologias" :key="tech">{{tech}} </li>
+       
+    </ul>
+</div>
+
+
+
+<script>
+    new Vue({
+        el: '#app',
+        data(){
+            return{
+                tecnologias: ['Javascript','VueJS','NodeJS','PHP','Java']
+               
+            }
+        }
+    });
+</script>
+
+ 

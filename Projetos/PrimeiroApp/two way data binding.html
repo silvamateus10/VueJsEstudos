@@ -1,0 +1,23 @@
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+<div id="app">
+    <h1>{{nome}}</h1>
+    
+   <!-- <input v-bind:value="nome" v-on:input=" nome = $event.target.value "/>-->
+
+    <input v-model="nome"/>
+</div>
+
+
+
+<script>
+    new Vue({
+        el: '#app',
+        data(){
+            return{
+                nome: 'Mateus'
+            }
+        }
+        
+    });
+</script>

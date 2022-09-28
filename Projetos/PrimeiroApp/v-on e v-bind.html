@@ -1,0 +1,33 @@
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+<div id="app">
+    <h1>Primeiro App</h1>    
+    <p>Bem-vindo {{nome}}</p>
+    <a v-bind:href="canal">Canal no youtube</a>
+    <br/><br/>
+    <button v-on:click="trocarNome">Trocar nome</button>
+</div>
+
+
+
+<script>
+    new Vue({
+        el: '#app',
+        data(){
+            return{
+                nome: 'Sujeito programador',
+                canal:'https://www.youtube.com/'
+            }
+        },
+        methods:{
+            trocarNome(){
+                if (this.nome == 'Obi wan Kenobi'){
+                    this.nome = 'Sujeito Programador';
+                }else{
+                    this.nome = 'Obi wan Kenobi';
+                }
+               
+            }
+        }
+    });
+</script>

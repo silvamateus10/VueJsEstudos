@@ -1,0 +1,64 @@
+- vue create nomeProjeto (criar projeto)
+- vueconfig:  
+	- lintOnSave: false
+- npm run serve (rodar)
+- npm install axios (consumir api)
+- npm install vue-router (trabalhar com rotas)
+---novo watch-----
+       watch:{
+            tarefas:{
+                deep: true,
+                handler(){
+                    localStorage.setItem('tasks', JSON.stringify(this.tarefas));                    
+                }
+          }
+        }
+-----Add local-----
+  salvarFilme(){
+          const minhaLista = localStorage.getItem('myFilme');
+
+          let filmes = JSON.parse(minhaLista) || [];
+
+          //Percorre os filmes para ver se tem algum na lista que é igual,
+          // se tiver retorna true
+          const hasFilme = filmes.some((filme) => filme.id === this.filme.id);
+          if(hasFilme){
+            alert('Você já tem esse filme salvo!');
+            return;
+          }else{
+            filmes.push(this.filme);
+            localStorage.setItem('myFilme', JSON.stringify(filmes));
+            alert('Filme salvo!');
+          }
+        }
+      }
+
+-----Excluir local-----
+      excluir(id){
+          let filtroFilmes = this.filmes.filter((filme)=>{
+            return (filme.id !== id);
+          });
+
+          return this.filmes = filtroFilmes;
+          
+        }
+-----Consultando local-----
+ created(){
+        const minhaLista = localStorage.getItem('myFilme');
+        this.filmes = JSON.parse(minhaLista) || [];
+      },  
+
+-----buid-----
+npm install netlify-cli :(para local)
+npm install netlify-cli -g :(para global)
+
+npm run build :(biudar o projeto)
+
+netlify deploy 
+./dist
+
+netlify deploy --prod
+./dist
+-------------------
+npm install firebase@^8.8.1
+

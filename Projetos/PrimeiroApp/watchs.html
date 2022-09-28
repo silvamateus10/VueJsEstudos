@@ -1,0 +1,47 @@
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+<div id="app">
+    <h1>{{nome}}</h1>
+    <p>Nome grande: {{resultadoNome}}</p>
+    <button v-on:click="conc()">Concatenar #</button>
+
+    <hr/>
+
+    <h1>{{numero}}</h1>
+    <button v-on:click="numero++">Somar número</button>
+</div>
+
+
+
+<script>
+    new Vue({
+        el: '#app',
+        data(){
+            return{
+                nome: 'Mateus',
+                numero: 10
+            }
+        },
+        methods:{
+            conc(){
+                this.nome += "#"
+            },        
+        },
+        computed:{
+            resultadoNome(){
+                return this.nome.length >= 10 ? 'Maior que 10 letras' : 'Menor que 10 letras' ;
+            }
+        },
+        watch:{
+            nome(novo, antigo){
+                //Sempre que a variável nome mudar ele vai chamar o watch                
+                setTimeout(()=>{
+                    this.numero = 999;
+                },2000);
+ 
+            }
+        }
+        
+        
+    });
+</script>

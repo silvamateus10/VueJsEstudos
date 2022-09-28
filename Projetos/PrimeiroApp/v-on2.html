@@ -1,0 +1,28 @@
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+<div id="app">
+    <h1>Primeiro App</h1>    
+    <p>Bem-vindo {{num}}</p>
+    <a v-bind:href="canal">Canal no youtube</a>
+    <br/><br/>
+    <button v-on:click="somarNumero(5)">Somar</button>
+    <button v-on:click.once="somarNumero(5)">Somar uma vez</button>
+</div>
+
+
+
+<script>
+    new Vue({
+        el: '#app',
+        data(){
+            return{
+                num: 0
+            }
+        },
+        methods:{
+            somarNumero(numero){
+                this.num += numero;               
+            }
+        }
+    });
+</script>
